@@ -22,13 +22,14 @@ client = OpenRGBClient()
 client.clear()
 # set the motherboard to the configured color
 motherboard = client.get_devices_by_type(DeviceType.MOTHERBOARD)[0]
-motherboard.set_color(primary)
 print(f"The motherboard {motherboard.name} was initialized with the primary color.", flush=True)
 
 mouse = client.get_devices_by_type(DeviceType.MOUSE)[0]
 print(f"The following mouse is going to be controlled: {mouse.name}", flush=True)
 
 while True:
+    motherboard.set_mode("static")
+    motherboard.set_color(primary)
     mouse.set_mode("static")
     mouse.zones[0].set_color(primary)
     mouse.zones[1].set_color(RGBColor(0, 0, 0))
