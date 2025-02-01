@@ -32,5 +32,5 @@ while True:
     mouse.set_mode("static")
     mouse.zones[0].set_color(primary)
     mouse.zones[1].set_color(RGBColor(0, 0, 0))
-    sleep(4)
+    sleep(10)
 
